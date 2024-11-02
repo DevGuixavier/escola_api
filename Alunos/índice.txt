@@ -1,0 +1,2 @@
+Esta é a entidade Aluno que gerencia os estudantes associados a uma turma.
+O modelo de dados contém informações como nome, idade, notas e a relação com a turma.

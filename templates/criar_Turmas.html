@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Turma</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background: #007BFF;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        main {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, button, select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Criar Turma</h1>
+    </header>
+    <main>
+        <form action="{{ url_for('turmas.create_turma_html') }}" method="POST">
+            <label for="descricao">Descrição:</label>
+            <input type="text" id="descricao" name="descricao" required>
+
+            <label for="professor_id">ID do Professor:</label>
+            <input type="number" id="professor_id" name="professor_id" required>
+
+            <label for="ativo">Ativo:</label>
+            <select id="ativo" name="ativo" required>
+                <option value="true">Sim</option>
+                <option value="false">Não</option>
+            </select>
+
+            <button type="submit">Criar Turma</button>
+        </form>
+    </main>
+</body>
+</html>
